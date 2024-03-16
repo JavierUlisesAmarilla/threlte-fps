@@ -56,8 +56,11 @@ export const initBulletSystem = () => {
 		if (availableIndex !== undefined) {
 			const bulletPhysic = bulletPhysics[availableIndex]
 
-			if (bulletPhysic) {
+			if (bulletPhysic?.body) {
 				world.removeRigidBody(bulletPhysic.body);
+			}
+
+			if (bulletPhysic?.collider) {
 				world.removeCollider(bulletPhysic.collider, false);
 			}
 
