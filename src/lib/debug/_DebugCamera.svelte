@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { T } from '@threlte/core';
-	import { OrbitControls } from '@threlte/extras';
-	import { rendererStores } from '$lib/renderer/rendererStores';
-	import { onDestroy, onMount } from 'svelte';
-	import { get } from 'svelte/store';
-	import type { PerspectiveCamera } from 'three';
+	import {rendererStores} from '$lib/renderer/rendererStores';
+	import {T} from '@threlte/core';
+	import {OrbitControls} from '@threlte/extras';
+	import {onDestroy} from 'svelte';
+	import {get} from 'svelte/store';
+	import type {PerspectiveCamera} from 'three';
 
 	let debugCamera: PerspectiveCamera | undefined = undefined;
 	$: debugCamera ? rendererStores.debugCamera.set(debugCamera) : '';

@@ -1,16 +1,15 @@
 <script lang="ts">
-	import { Canvas } from '@threlte/core';
+	import {dev} from '$app/environment';
 	import GameWorld from '$lib/GameWorld.svelte';
 	import Cameras from '$lib/renderer/Cameras.svelte';
 	import Renderer from '$lib/renderer/Renderer.svelte';
-	import { Theatre } from '@threlte/theatre';
-	import { KeyboardControls } from 'svelte-kbc';
+	import {Canvas} from '@threlte/core';
+	import {Theatre} from '@threlte/theatre';
+	import {KeyboardControls} from 'svelte-kbc';
 	import GameUi from './ui/GameUi.svelte';
-	import { dev } from '$app/environment';
 
 	const config = [
 		// individual key presses
-
 		{ name: 'debugToggle', keys: ['y', 'Y'] },
 		{ name: 'forward', keys: ['ArrowUp', 'w', 'W'] },
 		{ name: 'back', keys: ['ArrowDown', 's', 'S'] },

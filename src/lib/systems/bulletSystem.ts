@@ -1,10 +1,10 @@
-import type { V3, V3obj } from '$lib/util/types';
-import type { RigidBody, Collider } from '@dimforge/rapier3d-compat';
-import { useRapier } from '@threlte/rapier';
-import { Vector3 } from 'three';
-
-import { soundMap } from './soundSystem';
-import { useGameData } from './_gameData';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type {V3, V3obj} from '$lib/util/types';
+import type {Collider, RigidBody} from '@dimforge/rapier3d-compat';
+import {useRapier} from '@threlte/rapier';
+import {Vector3} from 'three';
+import {useGameData} from './_gameData';
+import {soundMap} from './soundSystem';
 
 const BULLET_FAR_CLEANUP = 1000;
 const BULLET_MIN_SPEED_CLEANUP = 6;
@@ -18,10 +18,10 @@ export type BulletSpawnOptions = {
 };
 
 export const initBulletSystem = () => {
-	const { rapier, world } = useRapier();
+	const {rapier, world} = useRapier();
 
-	const { bulletData } = useGameData();
-	const { bulletPhysics, bulletImpacts } = bulletData;
+	const {bulletData} = useGameData();
+	const {bulletPhysics, bulletImpacts} = bulletData;
 
 	const colliderDesc = rapier.ColliderDesc.ball(0.1);
 
@@ -77,7 +77,7 @@ export const initBulletSystem = () => {
 				// Clean up if too far
 				let cleanup = false;
 				if (updateCount % 50 === 0 && !cleanup) {
-					const { x, y, z } = bullet.body.translation();
+					const {x, y, z} = bullet.body.translation();
 					if (
 						Math.abs(x) > BULLET_FAR_CLEANUP ||
 						Math.abs(y) > BULLET_FAR_CLEANUP ||
@@ -88,7 +88,7 @@ export const initBulletSystem = () => {
 				}
 				// Clean up if too slow
 				if (updateCount % 20 === 0 && !cleanup) {
-					const { x, y, z } = bullet.body.linvel();
+					const {x, y, z} = bullet.body.linvel();
 					const speed = Math.abs(x) + Math.abs(y) + Math.abs(z);
 					if (speed < BULLET_MIN_SPEED_CLEANUP) {
 						cleanup = true;
@@ -123,7 +123,7 @@ export const initBulletSystem = () => {
 					if (userData.impacted !== true && otherCollider.shape.type !== 7) {
 						const linvel = bullet.body.linvel();
 						bullet.body.setLinvel(
-							{ x: linvel.x * 0.03, y: linvel.y * 0.03, z: linvel.z * 0.03 },
+							{x: linvel.x * 0.03, y: linvel.y * 0.03, z: linvel.z * 0.03},
 							true
 						);
 						bullet.body.setLinearDamping(2);
@@ -140,16 +140,16 @@ export const initBulletSystem = () => {
 		}
 	};
 
-	return { spawnBullet, cleanup, update };
+	return {spawnBullet, cleanup, update};
 };
 
 export type BulletSystem = ReturnType<typeof initBulletSystem>;
 
 export type BulletPhysics =
 	| {
-			body: RigidBody;
-			collider: Collider;
-	  }
+		body: RigidBody;
+		collider: Collider;
+	}
 	| undefined;
 
 export type BulletImpact = {

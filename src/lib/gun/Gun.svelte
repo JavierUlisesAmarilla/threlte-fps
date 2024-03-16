@@ -1,16 +1,15 @@
 <script lang="ts">
 	import M4 from '$lib/components/models/M4.svelte';
-	import { T, useFrame } from '@threlte/core';
-	import { rendererStores } from '$lib/renderer/rendererStores';
-	import { Quaternion, Vector3, type Group, PointLight } from 'three';
-	import { DEG2RAD } from 'three/src/math/MathUtils';
-	import { useSystem } from '$lib/systems/_systems';
-	import { soundMap } from '$lib/systems/soundSystem';
-	import { tweened } from 'svelte/motion';
-	import { useGameData } from '$lib/systems/_gameData';
-	import { controlStores } from '$lib/controls/controlStores';
-	import { gunStores } from './gunStores';
+	import {controlStores} from '$lib/controls/controlStores';
+	import {rendererStores} from '$lib/renderer/rendererStores';
+	import {useGameData} from '$lib/systems/_gameData';
+	import {useSystem} from '$lib/systems/_systems';
+	import {soundMap} from '$lib/systems/soundSystem';
+	import {T, useFrame} from '@threlte/core';
+	import {Quaternion, Vector3, type Group} from 'three';
+	import {DEG2RAD} from 'three/src/math/MathUtils';
 	import MuzzleFlash from './MuzzleFlash.svelte';
+	import {gunStores} from './gunStores';
 
 	const { eyesCamera, activeCamera } = rendererStores;
 	const { shotPulse } = gunStores;

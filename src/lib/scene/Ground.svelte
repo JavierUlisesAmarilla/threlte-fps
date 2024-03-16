@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { createNoise2D } from 'simplex-noise';
-	import { T, useLoader } from '@threlte/core';
-	import { AutoColliders, Collider, RigidBody } from '@threlte/rapier';
-	import { PlaneGeometry } from 'three';
-	import { DEG2RAD } from 'three/src/math/MathUtils';
-	import { useTexture } from '@threlte/extras';
 	import RAPIER from '@dimforge/rapier3d-compat';
+	import {T} from '@threlte/core';
+	import {useTexture} from '@threlte/extras';
+	import {AutoColliders} from '@threlte/rapier';
+	import {createNoise2D} from 'simplex-noise';
+	import {PlaneGeometry, RepeatWrapping, Texture} from 'three';
+	import {DEG2RAD} from 'three/src/math/MathUtils';
 
 	const size = 100;
 	let nsubdivs = 80;
@@ -31,6 +31,15 @@
 	geometry.computeVertexNormals();
 
 	const scale = new RAPIER.Vector3(size, 1, size);
+
+	let map: Texture;
+
+	(async () => {
+		map = await useTexture('models/textures/ground.jpg');
+		map.wrapS = RepeatWrapping;
+		map.wrapT = RepeatWrapping;
+		map.repeat.set(200, 200);
+	})();
 </script>
 
 <!-- <T.Group position.y={-5}>
@@ -47,7 +56,7 @@
 	<AutoColliders>
 		<T.Mesh rotation.x={-DEG2RAD * 90}>
 			<T.PlaneGeometry args={[1000, 1000]} />
-			<T.MeshStandardMaterial color="#aaaaaa" />
+			<T.MeshStandardMaterial color="#aaaaaa" {map} />
 		</T.Mesh>
 	</AutoColliders>
 </T.Group>

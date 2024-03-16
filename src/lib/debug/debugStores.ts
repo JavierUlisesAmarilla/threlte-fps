@@ -1,7 +1,6 @@
-import { dev } from '$app/environment';
-import { writable } from 'svelte/store';
+import {writable} from 'svelte/store';
 
-const debugActive = writable(dev);
+const debugActive = writable(false);
 
 export const debugStores = {
 	debugActive

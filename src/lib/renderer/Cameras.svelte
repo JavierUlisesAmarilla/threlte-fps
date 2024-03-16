@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { T, useFrame } from '@threlte/core';
-	import { AudioListener } from '@threlte/extras';
-	import { quadInOut } from 'svelte/easing';
-	import { tweened } from 'svelte/motion';
-	import { Quaternion, Vector3, type PerspectiveCamera } from 'three';
-	import { cameraStores } from './cameraStores';
-	import { rendererStores } from './rendererStores';
+	import {T, useFrame} from '@threlte/core';
+	import {AudioListener} from '@threlte/extras';
+	import {quadInOut} from 'svelte/easing';
+	import {tweened} from 'svelte/motion';
+	import {Quaternion, Vector3, type PerspectiveCamera} from 'three';
+	import {cameraStores} from './cameraStores';
+	import {rendererStores} from './rendererStores';
 
 	let eyesCamera: PerspectiveCamera | undefined = undefined;
 	let sightsCamera: PerspectiveCamera | undefined = undefined;
@@ -37,6 +37,7 @@
 			});
 		}
 	}
+
 	useFrame(() => {
 		if ($activeCamera === 'eyes') {
 			currentCameraPosition.lerp($eyesPosition, $cameraSwapTween);

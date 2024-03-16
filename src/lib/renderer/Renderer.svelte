@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { useRender, useThrelte } from '@threlte/core';
-	import { onMount } from 'svelte';
-	import { rendererStores } from './rendererStores';
-	import { requestPointerLockWithUnadjustedMovement } from '$lib/util/pointerLock';
-	import { PerspectiveCamera, WebGLRenderTarget } from 'three';
-	import { cameraStores } from './cameraStores';
-	import { gunStores } from '$lib/gun/gunStores';
+	import {gunStores} from '$lib/gun/gunStores';
+	import {useRender, useThrelte} from '@threlte/core';
+	import {PerspectiveCamera, WebGLRenderTarget} from 'three';
+	import {cameraStores} from './cameraStores';
+	import {rendererStores} from './rendererStores';
 
 	const { activeCamera, debugCamera, sightsCamera, sightsRenderTarget } = rendererStores;
 	const { sightsPosition, sightsQuat } = cameraStores;

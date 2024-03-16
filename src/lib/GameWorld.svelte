@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { T } from '@threlte/core';
-	import { Environment } from '@threlte/extras';
-
 	import Player from '$lib/player/Player.svelte';
-	import { AutoColliders, World } from '@threlte/rapier';
-	import { DEG2RAD } from 'three/src/math/MathUtils';
+	import {T} from '@threlte/core';
+	import {Environment} from '@threlte/extras';
+	import {World} from '@threlte/rapier';
 	import GameSystems from './GameSystems.svelte';
 	import DebugGame from './debug/DebugGame.svelte';
 	import GunSystem from './gun/GunSystem.svelte';
@@ -24,14 +22,14 @@
 		<Player />
 		<GunSystem />
 
-		<AutoColliders>
+		<!-- <AutoColliders>
 			<T.Mesh position.z={-25} position.y={2}>
 				<T.BoxGeometry args={[4, 4, 4]} />
 				<T.MeshStandardMaterial color="#444444" />
 			</T.Mesh>
-		</AutoColliders>
+		</AutoColliders> -->
 
-		{#each { length: 10 } as d, x}
+		<!-- {#each { length: 10 } as d, x}
 			{#each { length: 10 } as rz, z}
 				<AutoColliders restitution={0}>
 					<T.Mesh position.x={(x - 5) * 20 + 3} position.z={(z - 5) * 50 + 5} position.y={2}>
@@ -40,7 +38,7 @@
 					</T.Mesh>
 				</AutoColliders>
 			{/each}
-		{/each}
+		{/each} -->
 		<Sky />
 		<Ground />
 		<DebugGame />
