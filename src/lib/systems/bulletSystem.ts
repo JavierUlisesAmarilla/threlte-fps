@@ -29,7 +29,7 @@ export const initBulletSystem = () => {
 	const barrelStart = new Vector3();
 	const barrelEnd = new Vector3();
 
-	let availableIndex: undefined | number = undefined;
+	let availableIndex: undefined | number = 0;
 
 	const spawnBullet = (options: BulletSpawnOptions) => {
 		barrelStart.set(...options.origin);
@@ -53,11 +53,20 @@ export const initBulletSystem = () => {
 		const body = world.createRigidBody(rigidBodyDesc);
 		const collider = world.createCollider(colliderDesc, body);
 
-		if (availableIndex) {
+		if (availableIndex !== undefined) {
+			const bulletPhysic = bulletPhysics[availableIndex]
+
+			if (bulletPhysic) {
+				world.removeRigidBody(bulletPhysic.body);
+				world.removeCollider(bulletPhysic.collider, false);
+			}
+
 			bulletPhysics[availableIndex] = {
 				body,
 				collider
 			};
+
+			availableIndex = (availableIndex + 1) % 20
 		} else {
 			bulletPhysics.push({
 				body,

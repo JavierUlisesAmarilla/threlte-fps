@@ -24,7 +24,7 @@
 
 	useFrame(() => {
 		systems.bulletSystem.update();
-		systems.bulletSystem.cleanup();
+		// systems.bulletSystem.cleanup();
 		systems.soundSystem.update();
 		systems.gunSystem.update();
 		systems.controlsSystem.update();
