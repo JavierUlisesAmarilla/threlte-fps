@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { uiStores } from './uiStores';
+	import {uiStores} from './uiStores';
 
 	const { bulletCount } = uiStores;
 </script>
@@ -43,6 +43,10 @@
 
 <style>
 	.ammoCount {
-		text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+		text-shadow:
+			-1px -1px 0 #000,
+			1px -1px 0 #000,
+			-1px 1px 0 #000,
+			1px 1px 0 #000;
 	}
 </style>

@@ -1,6 +1,6 @@
 <script>
-	import OtherSounds from './internals/OtherSounds.svelte';
 	import ImpactSounds from './internals/ImpactSounds.svelte';
+	import OtherSounds from './internals/OtherSounds.svelte';
 </script>
 
 <ImpactSounds />

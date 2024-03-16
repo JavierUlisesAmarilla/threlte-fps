@@ -1,6 +1,6 @@
 <script lang="ts">
 	import App from '$lib/App.svelte';
-	import { onMount } from 'svelte';
+	import {onMount} from 'svelte';
 
 	let started = false;
 

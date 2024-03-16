@@ -1,6 +1,6 @@
-import { execSync } from 'node:child_process'
-import { readdirSync, copyFileSync, unlinkSync, mkdirSync, existsSync } from 'node:fs'
-import { join, resolve } from 'node:path'
+import {execSync} from 'node:child_process'
+import {copyFileSync, existsSync, mkdirSync, readdirSync, unlinkSync} from 'node:fs'
+import {join, resolve} from 'node:path'
 
 /**
  * This script is used to transform gltf and glb files into Threlte components.
@@ -37,7 +37,7 @@ const configuration = {
 }
 
 // if the target directory doesn't exist, create it
-mkdirSync(configuration.targetDir, { recursive: true })
+mkdirSync(configuration.targetDir, {recursive: true})
 
 // throw error if source directory doesn't exist
 if (!existsSync(configuration.sourceDir)) {

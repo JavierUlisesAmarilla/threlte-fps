@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { useGameData } from '$lib/systems/_gameData';
-	import { T, useFrame } from '@threlte/core';
-	import { PositionalAudio } from '@threlte/extras';
-	import { PositionalAudioHelper } from 'three/examples/jsm/helpers/PositionalAudioHelper';
+	import {useGameData} from '$lib/systems/_gameData';
+	import {T, useFrame} from '@threlte/core';
+	import {PositionalAudio} from '@threlte/extras';
 
 	let impact1: any;
 	let impact2: any;

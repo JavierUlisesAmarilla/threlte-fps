@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { requestPointerLockWithUnadjustedMovement } from '$lib/util/pointerLock';
-	import { useThrelte } from '@threlte/core';
-	import { controlStores } from './controlStores';
-	import { onDestroy } from 'svelte';
-	import { useSystem } from '$lib/systems/_systems';
+	import {useSystem} from '$lib/systems/_systems';
+	import {requestPointerLockWithUnadjustedMovement} from '$lib/util/pointerLock';
+	import {useThrelte} from '@threlte/core';
+	import {onDestroy} from 'svelte';
+	import {controlStores} from './controlStores';
 
 	const { allowPointerLock, allowMouseAim } = controlStores;
 	const { controlsSystem } = useSystem();

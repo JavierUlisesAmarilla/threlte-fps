@@ -1,4 +1,4 @@
-import { useGameData } from './_gameData';
+import {useGameData} from './_gameData';
 
 export const initGunSystem = () => {
 	const gameData = useGameData();
@@ -12,7 +12,7 @@ export const initGunSystem = () => {
 		//
 	};
 
-	return { update, setGunOrientation };
+	return {update, setGunOrientation};
 };
 
 export type GunSystem = ReturnType<typeof initGunSystem>;

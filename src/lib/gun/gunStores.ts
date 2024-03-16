@@ -1,6 +1,6 @@
-import { tweened } from 'svelte/motion';
-import { writable, type Writable } from 'svelte/store';
-import { Vector3, type Object3D } from 'three';
+import {tweened} from 'svelte/motion';
+import {writable, type Writable} from 'svelte/store';
+import {Vector3, type Object3D} from 'three';
 
 const gunObject3D: Writable<Object3D | undefined> = writable(undefined);
 const barrelStart: Writable<Vector3> = writable(new Vector3());

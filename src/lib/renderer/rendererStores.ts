@@ -1,5 +1,5 @@
-import { writable, type Writable } from 'svelte/store';
-import type { WebGLRenderTarget, PerspectiveCamera } from 'three';
+import {writable, type Writable} from 'svelte/store';
+import type {PerspectiveCamera, WebGLRenderTarget} from 'three';
 
 export type CameraViewLocation = 'eyes' | 'sights' | 'debug';
 

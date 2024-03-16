@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { useFrame } from '@threlte/core';
-	import { initBulletSystem } from '$lib/systems/bulletSystem';
-	import { initSoundSystem } from '$lib/systems/soundSystem';
-	import { setContext } from 'svelte';
-	import { gameData } from '$lib/systems/_gameData';
-	import SoundSystem from '$lib/sounds/SoundSystem.svelte';
-	import BulletSystem from '$lib/gun/BulletSystem.svelte';
-	import type { GameSystems } from './systems/_systems';
-	import { initGunSystem } from './systems/gunSystem';
 	import ControlsSystem from '$lib/controls/ControlsSystem.svelte';
-	import { initControlsSystem } from './systems/controlsSystem';
+	import BulletSystem from '$lib/gun/BulletSystem.svelte';
+	import SoundSystem from '$lib/sounds/SoundSystem.svelte';
+	import {gameData} from '$lib/systems/_gameData';
+	import {initBulletSystem} from '$lib/systems/bulletSystem';
+	import {initSoundSystem} from '$lib/systems/soundSystem';
+	import {useFrame} from '@threlte/core';
+	import {setContext} from 'svelte';
+	import type {GameSystems} from './systems/_systems';
+	import {initControlsSystem} from './systems/controlsSystem';
+	import {initGunSystem} from './systems/gunSystem';
 
 	setContext('game-data-ctx', gameData);
 

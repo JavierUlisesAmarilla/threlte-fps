@@ -8,24 +8,24 @@ Title: M4A1 With Hands And Animations
 -->
 
 <script lang="ts">
+	import {gunStores} from '$lib/gun/gunStores';
+	import {cameraStores} from '$lib/renderer/cameraStores';
+	import {rendererStores} from '$lib/renderer/rendererStores';
+	import ScopeShaderMaterial from '$lib/shaders/ScopeShaderMaterial.svelte';
 	import {
 		T,
-		type Props,
-		type Events,
-		type Slots,
 		forwardEventHandlers,
-		useFrame
+		useFrame,
+		type Events,
+		type Props,
+		type Slots
 	} from '@threlte/core';
-	import { useGltf, useGltfAnimations, useTexture } from '@threlte/extras';
-	import { rendererStores } from '$lib/renderer/rendererStores';
-	import { cameraStores } from '$lib/renderer/cameraStores';
-	import { tweened } from 'svelte/motion';
-	import { quadInOut } from 'svelte/easing';
+	import {useGltf, useGltfAnimations} from '@threlte/extras';
+	import {useKeyboardControls} from 'svelte-kbc';
+	import {quadInOut} from 'svelte/easing';
+	import {tweened} from 'svelte/motion';
 	import * as THREE from 'three';
-	import { DEG2RAD } from 'three/src/math/MathUtils';
-	import { useKeyboardControls } from 'svelte-kbc';
-	import { gunStores } from '$lib/gun/gunStores';
-	import ScopeShaderMaterial from '$lib/shaders/ScopeShaderMaterial.svelte';
+	import {DEG2RAD} from 'three/src/math/MathUtils';
 
 	type $$Props = Props<THREE.Group> & {
 		startPosition: THREE.Vector3;

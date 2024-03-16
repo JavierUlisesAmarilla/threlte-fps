@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { T } from '@threlte/core';
-	import { DoubleSide, MeshStandardMaterial, SphereGeometry } from 'three';
+	import {T} from '@threlte/core';
+	import {DoubleSide} from 'three';
 </script>
 
 <T.Mesh>

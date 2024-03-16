@@ -1,5 +1,5 @@
-import { writable, type Writable } from 'svelte/store';
-import { type PerspectiveCamera, Quaternion, Vector3 } from 'three';
+import {writable, type Writable} from 'svelte/store';
+import {Quaternion, Vector3} from 'three';
 
 export type CameraViewLocation = 'eyes' | 'sights' | 'debug';
 

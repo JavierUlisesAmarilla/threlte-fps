@@ -1,7 +1,7 @@
-import { getContext } from 'svelte';
-import type { BulletPhysics, BulletImpact } from './bulletSystem';
-import type { GameSound } from './soundSystem';
-import { tweened } from 'svelte/motion';
+import {getContext} from 'svelte';
+import {tweened} from 'svelte/motion';
+import type {BulletImpact, BulletPhysics} from './bulletSystem';
+import type {GameSound} from './soundSystem';
 
 const bulletData: {
 	bulletPhysics: (BulletPhysics | undefined)[];
@@ -24,7 +24,7 @@ const gunData = {
 		theta: 0,
 		phi: 0
 	},
-	recoil: tweened({ x: 0, y: 0 })
+	recoil: tweened({x: 0, y: 0})
 };
 
 const controlsData = {

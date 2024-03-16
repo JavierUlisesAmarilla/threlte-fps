@@ -1,8 +1,8 @@
-import { getContext } from 'svelte';
-import type { BulletSystem } from './bulletSystem';
-import type { SoundSystem } from './soundSystem';
-import type { GunSystem } from './gunSystem';
-import type { ControlsSystem } from './controlsSystem';
+import {getContext} from 'svelte';
+import type {BulletSystem} from './bulletSystem';
+import type {ControlsSystem} from './controlsSystem';
+import type {GunSystem} from './gunSystem';
+import type {SoundSystem} from './soundSystem';
 
 export type GameSystems = {
 	bulletSystem: BulletSystem;

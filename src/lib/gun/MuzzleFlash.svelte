@@ -1,26 +1,14 @@
 <script lang="ts">
-	import { T, useFrame } from '@threlte/core';
-	import { gunStores } from './gunStores';
-	import {
-		CapsuleGeometry,
-		CircleGeometry,
-		DoubleSide,
-		Group,
-		MeshBasicMaterial,
-		Quaternion,
-		Texture,
-		Vector3
-	} from 'three';
-	import { useTexture } from '@threlte/extras';
-	import { DEG2RAD } from 'three/src/math/MathUtils';
-	import { customShaderMaterial } from '$lib/shaders/customShaderMaterial';
-	import type CustomShaderMaterial from 'three-custom-shader-material/vanilla';
-
-	import vertexShader from '$lib/shaders/vertStandard.glsl?raw';
-	import fragmentShader from '$lib/shaders/fragMuzzle.glsl?raw';
+	import {customShaderMaterial} from '$lib/shaders/customShaderMaterial';
 	import fragmentShader2 from '$lib/shaders/fragMuzzle2.glsl?raw';
-	import { tweened } from 'svelte/motion';
-	import { quadIn, quadOut, quintIn, quintInOut, quintOut } from 'svelte/easing';
+	import vertexShader from '$lib/shaders/vertStandard.glsl?raw';
+	import {T, useFrame} from '@threlte/core';
+	import {useTexture} from '@threlte/extras';
+	import {quadOut, quintOut} from 'svelte/easing';
+	import {tweened} from 'svelte/motion';
+	import {DoubleSide, Group, MeshBasicMaterial, Quaternion, Texture, Vector3} from 'three';
+	import type CustomShaderMaterial from 'three-custom-shader-material/vanilla';
+	import {gunStores} from './gunStores';
 
 	let muzzleGroup: Group;
 

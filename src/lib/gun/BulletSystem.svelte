@@ -1,17 +1,11 @@
 <script lang="ts">
-	import * as THREE from 'three';
-	import { Group } from 'three';
+	import {useGameData} from '$lib/systems/_gameData';
+	import type {V3} from '$lib/util/types';
 	import {
 		T,
-		type Props,
-		type Events,
-		type Slots,
-		forwardEventHandlers,
 		useFrame
 	} from '@threlte/core';
-	import { useGltf, InstancedMeshes, InstancedMesh, Instance } from '@threlte/extras';
-	import { useGameData } from '$lib/systems/_gameData';
-	import type { V3 } from '$lib/util/types';
+	import {Instance, InstancedMesh} from '@threlte/extras';
 
 	let bulletPositions: {
 		position: V3;

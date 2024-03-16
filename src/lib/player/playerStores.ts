@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import {writable} from 'svelte/store';
 
 const playerPosition = writable({
 	x: 0,
@@ -7,4 +7,4 @@ const playerPosition = writable({
 });
 const strafing = writable(0);
 
-export const playerStores = { playerPosition, strafing };
+export const playerStores = {playerPosition, strafing};

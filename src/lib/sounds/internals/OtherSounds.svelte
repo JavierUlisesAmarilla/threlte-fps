@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { useGameData } from '$lib/systems/_gameData';
-	import { T, useFrame } from '@threlte/core';
-	import { PositionalAudio } from '@threlte/extras';
-
+	import {useGameData} from '$lib/systems/_gameData';
+	import {T, useFrame} from '@threlte/core';
+	import {PositionalAudio} from '@threlte/extras';
 	import type * as THREE from 'three';
 
 	let audioSources = new Array<THREE.PositionalAudio>(4);

@@ -1,5 +1,5 @@
-import type { V3, V3obj } from '$lib/util/types';
-import { useGameData } from './_gameData';
+import type {V3obj} from '$lib/util/types';
+import {useGameData} from './_gameData';
 
 export const soundMap = {
 	impactDefault: '/audio/impact2.mp3',
@@ -36,7 +36,7 @@ export const initSoundSystem = () => {
 		}
 	};
 
-	return { makeSound, update };
+	return {makeSound, update};
 };
 
 export type SoundSystem = ReturnType<typeof initSoundSystem>;

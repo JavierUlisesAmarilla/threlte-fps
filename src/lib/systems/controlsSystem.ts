@@ -1,4 +1,4 @@
-import { useGameData } from './_gameData';
+import {useGameData} from './_gameData';
 
 export const initControlsSystem = () => {
 	const gameData = useGameData();
@@ -17,7 +17,7 @@ export const initControlsSystem = () => {
 		//
 	};
 
-	return { update, mouseMove, clearMouseMove };
+	return {update, mouseMove, clearMouseMove};
 };
 
 export type ControlsSystem = ReturnType<typeof initControlsSystem>;
