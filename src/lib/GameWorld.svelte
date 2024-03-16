@@ -21,6 +21,7 @@
 	<GameSystems>
 		<Player />
 		<GunSystem />
+		<!-- <Soldier /> -->
 
 		<AutoColliders>
 			<T.Mesh position.z={-25} position.y={2}>
