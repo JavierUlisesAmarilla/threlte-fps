@@ -2,7 +2,7 @@
 	import Player from '$lib/player/Player.svelte';
 	import {T} from '@threlte/core';
 	import {Environment} from '@threlte/extras';
-	import {AutoColliders, World} from '@threlte/rapier';
+	import {World} from '@threlte/rapier';
 	import GameSystems from './GameSystems.svelte';
 	import Soldier from './components/models/Soldier.svelte';
 	import DebugGame from './debug/DebugGame.svelte';
@@ -24,7 +24,7 @@
 		<GunSystem />
 		<Soldier />
 
-		<AutoColliders>
+		<!-- <AutoColliders>
 			<T.Mesh position.z={-25} position.y={2}>
 				<T.BoxGeometry args={[4, 4, 4]} />
 				<T.MeshStandardMaterial color="#444444" />
@@ -40,10 +40,11 @@
 					</T.Mesh>
 				</AutoColliders>
 			{/each}
-		{/each}
+		{/each} -->
 
 		<Sky />
 		<Ground />
+		<!-- <T.AxesHelper args={[10, 10, 10]} /> -->
 		<DebugGame />
 	</GameSystems>
 </World>

@@ -22,7 +22,7 @@
 </script>
 
 {#if $helmet}
-	<T.Group position={[-2.5, 2, 2.5]} rotation={[90 * DEG2RAD, 0, 0]}>
+	<T.Group position={[0, 2, -10]} rotation={[90 * DEG2RAD, 0, 0]}>
 		<RigidBody>
 			<AutoColliders shape={'convexHull'}>
 				<T.Mesh castShadow geometry={$helmet.geometry} material={$helmet.material} />
