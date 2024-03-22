@@ -4,7 +4,7 @@
 	import {Environment} from '@threlte/extras';
 	import {World} from '@threlte/rapier';
 	import GameSystems from './GameSystems.svelte';
-	import Soldier from './components/models/Soldier.svelte';
+	import Helmet from './components/models/Helmet.svelte';
 	import DebugGame from './debug/DebugGame.svelte';
 	import GunSystem from './gun/GunSystem.svelte';
 	import Ground from './scene/Ground.svelte';
@@ -22,7 +22,7 @@
 	<GameSystems>
 		<Player />
 		<GunSystem />
-		<Soldier />
+		<Helmet />
 
 		<!-- <AutoColliders>
 			<T.Mesh position.z={-25} position.y={2}>
