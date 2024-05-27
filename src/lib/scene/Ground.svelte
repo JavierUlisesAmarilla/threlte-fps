@@ -1,14 +1,15 @@
 <script lang="ts">
 	import RAPIER from '@dimforge/rapier3d-compat';
-	import {T} from '@threlte/core';
-	import {useTexture} from '@threlte/extras';
-	import {AutoColliders} from '@threlte/rapier';
-	import {createNoise2D} from 'simplex-noise';
-	import {PlaneGeometry, RepeatWrapping, Texture} from 'three';
-	import {DEG2RAD} from 'three/src/math/MathUtils';
+	import { T } from '@threlte/core';
+	import { useTexture } from '@threlte/extras';
+	import { AutoColliders } from '@threlte/rapier';
+	import { createNoise2D } from 'simplex-noise';
+	import { PlaneGeometry, RepeatWrapping, Texture } from 'three';
+	import { DEG2RAD } from 'three/src/math/MathUtils';
 
 	const size = 100;
 	let nsubdivs = 80;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let heights: any[] = [];
 
 	const geometry = new PlaneGeometry(size, size, nsubdivs, nsubdivs);
@@ -20,7 +21,7 @@
 			let height = noise(x / 40, y / 40) * 5 + noise(x / 80, y / 80) * 7 + noise(x / 10, y / 10);
 
 			const vertIndex = (x + (nsubdivs + 1) * y) * 3;
-			//@ts-ignore
+			// @ts-expect-error -- TODO
 			vertices[vertIndex + 2] = height;
 			const heightIndex = y + (nsubdivs + 1) * x;
 			heights[heightIndex] = height;
@@ -30,6 +31,7 @@
 	// needed for lighting
 	geometry.computeVertexNormals();
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const scale = new RAPIER.Vector3(size, 1, size);
 
 	let map: Texture;

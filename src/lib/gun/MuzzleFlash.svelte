@@ -1,14 +1,14 @@
 <script lang="ts">
-	import {customShaderMaterial} from '$lib/shaders/customShaderMaterial';
+	import { customShaderMaterial } from '$lib/shaders/customShaderMaterial';
 	import fragmentShader2 from '$lib/shaders/fragMuzzle2.glsl?raw';
 	import vertexShader from '$lib/shaders/vertStandard.glsl?raw';
-	import {T, useFrame} from '@threlte/core';
-	import {useTexture} from '@threlte/extras';
-	import {quadOut, quintOut} from 'svelte/easing';
-	import {tweened} from 'svelte/motion';
-	import {DoubleSide, Group, MeshBasicMaterial, Quaternion, Texture, Vector3} from 'three';
+	import { T, useFrame } from '@threlte/core';
+	import { useTexture } from '@threlte/extras';
+	import { quadOut, quintOut } from 'svelte/easing';
+	import { tweened } from 'svelte/motion';
+	import { DoubleSide, Group, MeshBasicMaterial, Texture } from 'three';
 	import type CustomShaderMaterial from 'three-custom-shader-material/vanilla';
-	import {gunStores} from './gunStores';
+	import { gunStores } from './gunStores';
 
 	let muzzleGroup: Group;
 
@@ -66,10 +66,8 @@
 			});
 		}
 	};
-	let barrelDirection = new Vector3();
 
-	const nQuat = new Quaternion();
-
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	let timer = 0;
 
 	useFrame(({ clock }) => {

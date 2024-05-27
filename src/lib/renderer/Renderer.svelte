@@ -1,13 +1,12 @@
 <script lang="ts">
-	import {gunStores} from '$lib/gun/gunStores';
-	import {useRender, useThrelte} from '@threlte/core';
-	import {PerspectiveCamera, WebGLRenderTarget} from 'three';
-	import {cameraStores} from './cameraStores';
-	import {rendererStores} from './rendererStores';
+	import { gunStores } from '$lib/gun/gunStores';
+	import { useRender } from '@threlte/core';
+	import { PerspectiveCamera, WebGLRenderTarget } from 'three';
+	import { cameraStores } from './cameraStores';
+	import { rendererStores } from './rendererStores';
 
 	const { activeCamera, debugCamera, sightsCamera, sightsRenderTarget } = rendererStores;
 	const { sightsPosition, sightsQuat } = cameraStores;
-	const { renderer } = useThrelte();
 
 	const x2camera = new PerspectiveCamera(5);
 
@@ -22,8 +21,6 @@
 	}
 
 	useRender(({ scene, renderer }) => {
-		//
-
 		// if ($activeCamera == 'eyes' && $eyesCamera) {
 		// 	renderer?.render(scene, $eyesCamera);
 		// }

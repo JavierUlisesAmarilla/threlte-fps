@@ -1,10 +1,13 @@
 <script lang="ts">
-	import {useGameData} from '$lib/systems/_gameData';
-	import {T, useFrame} from '@threlte/core';
-	import {PositionalAudio} from '@threlte/extras';
+	import { useGameData } from '$lib/systems/_gameData';
+	import { T, useFrame } from '@threlte/core';
+	import { PositionalAudio } from '@threlte/extras';
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let impact1: any;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let impact2: any;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let impact3: any;
 
 	const impactVolume = 3;
@@ -50,7 +53,6 @@
 		bind:ref={impact1}
 		directionalCone={impactDirectionalCone}
 		rolloffFactor={impactRolloff}
-		let:ref
 	>
 		<!-- <T is={PositionalAudioHelper} args={[ref]} /> -->
 	</PositionalAudio>
@@ -65,7 +67,6 @@
 		src={'/audio/impact2.mp3'}
 		bind:ref={impact2}
 		directionalCone={impactDirectionalCone}
-		let:ref
 	>
 		<!-- <T is={PositionalAudioHelper} args={[ref]} /> -->
 	</PositionalAudio>
@@ -79,7 +80,6 @@
 		src={'/audio/impact2.mp3'}
 		bind:ref={impact3}
 		directionalCone={impactDirectionalCone}
-		let:ref
 		rolloffFactor={impactRolloff}
 	>
 		<!-- <T is={PositionalAudioHelper} args={[ref]} /> -->

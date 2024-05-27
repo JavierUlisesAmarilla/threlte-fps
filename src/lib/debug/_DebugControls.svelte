@@ -1,6 +1,6 @@
 <script lang="ts">
-	import {controlStores} from '$lib/controls/controlStores';
-	import {onDestroy} from 'svelte';
+	import { controlStores } from '$lib/controls/controlStores';
+	import { onDestroy } from 'svelte';
 
 	export let allowPointerLock: boolean;
 	export let allowMouseAim: boolean;

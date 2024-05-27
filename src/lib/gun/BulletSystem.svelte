@@ -1,11 +1,8 @@
 <script lang="ts">
-	import {useGameData} from '$lib/systems/_gameData';
-	import type {V3} from '$lib/util/types';
-	import {
-		T,
-		useFrame
-	} from '@threlte/core';
-	import {Instance, InstancedMesh} from '@threlte/extras';
+	import { useGameData } from '$lib/systems/_gameData';
+	import type { V3 } from '$lib/util/types';
+	import { T, useFrame } from '@threlte/core';
+	import { Instance, InstancedMesh } from '@threlte/extras';
 
 	let bulletPositions: {
 		position: V3;
@@ -36,7 +33,7 @@
 	<T.BoxGeometry args={[bulletSize, bulletSize, bulletSize]} />
 	<T.MeshBasicMaterial color={'#ffffaa'} />
 
-	{#each bulletPositions as b, i}
+	{#each bulletPositions as b}
 		<Instance position={b.position} />
 	{/each}
 </InstancedMesh>

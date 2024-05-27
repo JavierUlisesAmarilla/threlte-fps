@@ -1,7 +1,7 @@
 <script lang="ts">
-	import {useGameData} from '$lib/systems/_gameData';
-	import {T, useFrame} from '@threlte/core';
-	import {PositionalAudio} from '@threlte/extras';
+	import { useGameData } from '$lib/systems/_gameData';
+	import { T, useFrame } from '@threlte/core';
+	import { PositionalAudio } from '@threlte/extras';
 	import type * as THREE from 'three';
 
 	let audioSources = new Array<THREE.PositionalAudio>(4);
@@ -31,8 +31,8 @@
 	});
 </script>
 
-{#each audioSources as s, i}
+{#each audioSources as s}
 	<T.Mesh>
-		<PositionalAudio autostart src={'/audio/m4shot.mp3'} bind:ref={audioSources[i]} />
+		<PositionalAudio autostart src={'/audio/m4shot.mp3'} bind:ref={s} />
 	</T.Mesh>
 {/each}

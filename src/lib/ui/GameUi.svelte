@@ -1,7 +1,4 @@
 <script lang="ts">
-	import {uiStores} from './uiStores';
-
-	const { bulletCount } = uiStores;
 </script>
 
 <div
@@ -25,9 +22,6 @@
 	<div class="flex items-end justify-end pb-4">
 		<!--  -->
 		<div class="flex pr-10 items-center">
-			{#each { length: 30 } as a, x}
-				<!-- <img src="/ui/ammoOutlined.svg" class="h-16 -mx-6" alt="bullet" /> -->
-			{/each}
 			<!-- <span class="ammoCount text-4xl">{$bulletCount.current}/{$bulletCount.max}</span> -->
 			<ul class="ammoCount text-lg flex gap-10">
 				<li class="text-yellow-400">LMB - shoot</li>

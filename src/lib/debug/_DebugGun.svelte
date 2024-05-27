@@ -1,12 +1,11 @@
 <script lang="ts">
-	import {controlStores} from '$lib/controls/controlStores';
-	import {gunStores} from '$lib/gun/gunStores';
-	import {useGameData} from '$lib/systems/_gameData';
-	import {useSystem} from '$lib/systems/_systems';
-	import {soundMap} from '$lib/systems/soundSystem';
-	import {useFrame} from '@threlte/core';
-	import {onDestroy} from 'svelte';
-	import {Vector3} from 'three';
+	import { controlStores } from '$lib/controls/controlStores';
+	import { gunStores } from '$lib/gun/gunStores';
+	import { useSystem } from '$lib/systems/_systems';
+	import { soundMap } from '$lib/systems/soundSystem';
+	import { useFrame } from '@threlte/core';
+	import { onDestroy } from 'svelte';
+	import { Vector3 } from 'three';
 
 	export let adsAllow: boolean;
 
@@ -20,7 +19,6 @@
 	const { barrelStart, barrelEnd } = gunStores;
 
 	const { bulletSystem, soundSystem } = useSystem();
-	const { gunData } = useGameData();
 
 	let barrelDirection = new Vector3();
 

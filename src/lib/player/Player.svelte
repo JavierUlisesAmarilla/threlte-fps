@@ -49,9 +49,6 @@
 	let phi = 0;
 	let theta = 0;
 
-	let gunphi = 0;
-	let guntheta = 0;
-
 	const { eyesCamera } = rendererStores;
 	const { eyesPosition, eyesQuat } = cameraStores;
 

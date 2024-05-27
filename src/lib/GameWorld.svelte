@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Player from '$lib/player/Player.svelte';
-	import {T} from '@threlte/core';
-	import {Environment} from '@threlte/extras';
-	import {World} from '@threlte/rapier';
+	import { T } from '@threlte/core';
+	import { Environment } from '@threlte/extras';
+	import { World } from '@threlte/rapier';
 	import GameSystems from './GameSystems.svelte';
 	import Helmet from './components/models/Helmet.svelte';
 	import Soldier from './components/models/Soldier.svelte';

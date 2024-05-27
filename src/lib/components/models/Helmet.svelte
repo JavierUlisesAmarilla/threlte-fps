@@ -1,10 +1,10 @@
 <script lang="ts">
-	import {T} from '@threlte/core';
-	import {useGltf} from '@threlte/extras';
-	import {AutoColliders, RigidBody} from '@threlte/rapier';
-	import {derived} from 'svelte/store';
-	import {Mesh, MeshStandardMaterial} from 'three';
-	import {DEG2RAD} from 'three/src/math/MathUtils';
+	import { T } from '@threlte/core';
+	import { useGltf } from '@threlte/extras';
+	import { AutoColliders, RigidBody } from '@threlte/rapier';
+	import { derived } from 'svelte/store';
+	import { Mesh, MeshStandardMaterial } from 'three';
+	import { DEG2RAD } from 'three/src/math/MathUtils';
 
 	const gltf = useGltf<{
 		nodes: {

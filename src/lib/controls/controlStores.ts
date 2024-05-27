@@ -1,7 +1,7 @@
-import {writable} from 'svelte/store';
+import { writable } from 'svelte/store'
 
-const allowPointerLock = writable(true);
-const allowMouseAim = writable(true);
-const allowAds = writable(true);
+const allowPointerLock = writable(true)
+const allowMouseAim = writable(true)
+const allowAds = writable(true)
 
-export const controlStores = {allowPointerLock, allowMouseAim, allowAds};
+export const controlStores = { allowPointerLock, allowMouseAim, allowAds }

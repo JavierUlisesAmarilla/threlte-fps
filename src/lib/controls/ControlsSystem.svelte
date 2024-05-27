@@ -1,9 +1,9 @@
 <script lang="ts">
-	import {useSystem} from '$lib/systems/_systems';
-	import {requestPointerLockWithUnadjustedMovement} from '$lib/util/pointerLock';
-	import {useThrelte} from '@threlte/core';
-	import {onDestroy} from 'svelte';
-	import {controlStores} from './controlStores';
+	import { useSystem } from '$lib/systems/_systems';
+	import { requestPointerLockWithUnadjustedMovement } from '$lib/util/pointerLock';
+	import { useThrelte } from '@threlte/core';
+	import { onDestroy } from 'svelte';
+	import { controlStores } from './controlStores';
 
 	const { allowPointerLock, allowMouseAim } = controlStores;
 	const { controlsSystem } = useSystem();
@@ -24,7 +24,7 @@
 
 	document.addEventListener(
 		'pointerlockchange',
-		(e) => {
+		() => {
 			pointerLocked = document.pointerLockElement ? true : false;
 		},
 		false

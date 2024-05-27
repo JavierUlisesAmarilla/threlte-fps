@@ -1,15 +1,15 @@
 <script lang="ts">
 	import M4 from '$lib/components/models/M4.svelte';
-	import {controlStores} from '$lib/controls/controlStores';
-	import {rendererStores} from '$lib/renderer/rendererStores';
-	import {useGameData} from '$lib/systems/_gameData';
-	import {useSystem} from '$lib/systems/_systems';
-	import {soundMap} from '$lib/systems/soundSystem';
-	import {T, useFrame} from '@threlte/core';
-	import {Quaternion, Vector3, type Group} from 'three';
-	import {DEG2RAD} from 'three/src/math/MathUtils';
+	import { controlStores } from '$lib/controls/controlStores';
+	import { rendererStores } from '$lib/renderer/rendererStores';
+	import { useGameData } from '$lib/systems/_gameData';
+	import { useSystem } from '$lib/systems/_systems';
+	import { soundMap } from '$lib/systems/soundSystem';
+	import { T, useFrame } from '@threlte/core';
+	import { Quaternion, Vector3, type Group } from 'three';
+	import { DEG2RAD } from 'three/src/math/MathUtils';
 	import MuzzleFlash from './MuzzleFlash.svelte';
-	import {gunStores} from './gunStores';
+	import { gunStores } from './gunStores';
 
 	const { eyesCamera, activeCamera } = rendererStores;
 	const { shotPulse } = gunStores;
@@ -25,7 +25,7 @@
 
 	const { gunData } = useGameData();
 
-	useFrame(({ clock }) => {
+	useFrame(() => {
 		if ($eyesCamera) {
 			x = $eyesCamera.position.x;
 			y = $eyesCamera.position.y;

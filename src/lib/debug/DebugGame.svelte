@@ -1,16 +1,14 @@
 <script lang="ts">
-	import {cameraStores} from '$lib/renderer/cameraStores';
-	import {rendererStores} from '$lib/renderer/rendererStores';
-	import {types} from '@theatre/core';
-	import {Debug} from '@threlte/rapier';
-	import {Sheet, SheetObject, Studio} from '@threlte/theatre';
-	import {useKeyboardControls} from 'svelte-kbc';
+	import { rendererStores } from '$lib/renderer/rendererStores';
+	import { types } from '@theatre/core';
+	import { Debug } from '@threlte/rapier';
+	import { Sheet, SheetObject, Studio } from '@threlte/theatre';
+	import { useKeyboardControls } from 'svelte-kbc';
 	import DebugCamera from './_DebugCamera.svelte';
 	import DebugControls from './_DebugControls.svelte';
 	import DebugGun from './_DebugGun.svelte';
-	import {debugStores} from './debugStores';
+	import { debugStores } from './debugStores';
 
-	const cs = cameraStores;
 	const { activeCamera } = rendererStores;
 
 	export let debugCamera = false;

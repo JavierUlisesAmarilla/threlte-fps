@@ -1,11 +1,11 @@
 <script lang="ts">
-	import {dev} from '$app/environment';
+	import { dev } from '$app/environment';
 	import GameWorld from '$lib/GameWorld.svelte';
 	import Cameras from '$lib/renderer/Cameras.svelte';
 	import Renderer from '$lib/renderer/Renderer.svelte';
-	import {Canvas} from '@threlte/core';
-	import {Theatre} from '@threlte/theatre';
-	import {KeyboardControls} from 'svelte-kbc';
+	import { Canvas } from '@threlte/core';
+	import { Theatre } from '@threlte/theatre';
+	import { KeyboardControls } from 'svelte-kbc';
 	import GameUi from './ui/GameUi.svelte';
 
 	const config = [

@@ -1,7 +1,7 @@
-import {writable} from 'svelte/store';
+import { writable } from 'svelte/store'
 
-const debugActive = writable(false);
+const debugActive = writable(false)
 
 export const debugStores = {
 	debugActive
-};
+}

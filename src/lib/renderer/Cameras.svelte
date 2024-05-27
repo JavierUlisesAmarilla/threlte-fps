@@ -1,11 +1,11 @@
 <script lang="ts">
-	import {T, useFrame} from '@threlte/core';
-	import {AudioListener} from '@threlte/extras';
-	import {quadInOut} from 'svelte/easing';
-	import {tweened} from 'svelte/motion';
-	import {Quaternion, Vector3, type PerspectiveCamera} from 'three';
-	import {cameraStores} from './cameraStores';
-	import {rendererStores} from './rendererStores';
+	import { T, useFrame } from '@threlte/core';
+	import { AudioListener } from '@threlte/extras';
+	import { quadInOut } from 'svelte/easing';
+	import { tweened } from 'svelte/motion';
+	import { Quaternion, Vector3, type PerspectiveCamera } from 'three';
+	import { cameraStores } from './cameraStores';
+	import { rendererStores } from './rendererStores';
 
 	let eyesCamera: PerspectiveCamera | undefined = undefined;
 	let sightsCamera: PerspectiveCamera | undefined = undefined;
@@ -59,11 +59,11 @@
 	});
 </script>
 
-<T.PerspectiveCamera fov={60} near={0.0001} bind:ref={eyesCamera} let:ref>
+<T.PerspectiveCamera fov={60} near={0.0001} bind:ref={eyesCamera}>
 	<AudioListener />
 	<!-- <T.CameraHelper args={[ref]} /> -->
 </T.PerspectiveCamera>
 
-<T.PerspectiveCamera fov={60} near={0.0001} bind:ref={sightsCamera} let:ref>
+<T.PerspectiveCamera fov={60} near={0.0001} bind:ref={sightsCamera}>
 	<!-- <T.CameraHelper args={[ref]} /> -->
 </T.PerspectiveCamera>

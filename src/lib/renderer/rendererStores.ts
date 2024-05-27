@@ -1,14 +1,14 @@
-import {writable, type Writable} from 'svelte/store';
-import type {PerspectiveCamera, WebGLRenderTarget} from 'three';
+import { writable, type Writable } from 'svelte/store'
+import type { PerspectiveCamera, WebGLRenderTarget } from 'three'
 
-export type CameraViewLocation = 'eyes' | 'sights' | 'debug';
+export type CameraViewLocation = 'eyes' | 'sights' | 'debug'
 
-const activeCamera: Writable<CameraViewLocation> = writable('eyes');
+const activeCamera: Writable<CameraViewLocation> = writable('eyes')
 
-const eyesCamera: Writable<PerspectiveCamera | undefined> = writable(undefined);
-const sightsCamera: Writable<PerspectiveCamera | undefined> = writable(undefined);
-const debugCamera: Writable<PerspectiveCamera | undefined> = writable(undefined);
-const sightsRenderTarget: Writable<WebGLRenderTarget | undefined> = writable(undefined);
+const eyesCamera: Writable<PerspectiveCamera | undefined> = writable(undefined)
+const sightsCamera: Writable<PerspectiveCamera | undefined> = writable(undefined)
+const debugCamera: Writable<PerspectiveCamera | undefined> = writable(undefined)
+const sightsRenderTarget: Writable<WebGLRenderTarget | undefined> = writable(undefined)
 
 export const rendererStores = {
 	activeCamera,
@@ -16,4 +16,4 @@ export const rendererStores = {
 	sightsCamera,
 	debugCamera,
 	sightsRenderTarget
-};
+}

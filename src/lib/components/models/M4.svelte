@@ -8,32 +8,17 @@ Title: M4A1 With Hands And Animations
 -->
 
 <script lang="ts">
-	import {gunStores} from '$lib/gun/gunStores';
-	import {cameraStores} from '$lib/renderer/cameraStores';
-	import {rendererStores} from '$lib/renderer/rendererStores';
+	import { gunStores } from '$lib/gun/gunStores';
+	import { cameraStores } from '$lib/renderer/cameraStores';
+	import { rendererStores } from '$lib/renderer/rendererStores';
 	import ScopeShaderMaterial from '$lib/shaders/ScopeShaderMaterial.svelte';
-	import {
-		T,
-		forwardEventHandlers,
-		useFrame,
-		type Events,
-		type Props,
-		type Slots
-	} from '@threlte/core';
-	import {useGltf, useGltfAnimations} from '@threlte/extras';
-	import {useKeyboardControls} from 'svelte-kbc';
-	import {quadInOut} from 'svelte/easing';
-	import {tweened} from 'svelte/motion';
+	import { T, forwardEventHandlers, useFrame } from '@threlte/core';
+	import { useGltf, useGltfAnimations } from '@threlte/extras';
+	import { useKeyboardControls } from 'svelte-kbc';
+	import { quadInOut } from 'svelte/easing';
+	import { tweened } from 'svelte/motion';
 	import * as THREE from 'three';
-	import {DEG2RAD} from 'three/src/math/MathUtils';
-
-	type $$Props = Props<THREE.Group> & {
-		startPosition: THREE.Vector3;
-		endPosition: THREE.Vector3;
-		shooting: boolean;
-	};
-	type $$Events = Events<THREE.Group>;
-	type $$Slots = Slots<THREE.Group> & { fallback: {}; error: { error: any } };
+	import { DEG2RAD } from 'three/src/math/MathUtils';
 
 	export const ref = new THREE.Group();
 	export let shooting = false;
@@ -104,7 +89,9 @@ Title: M4A1 With Hands And Animations
 	sEndMarker.visible = false;
 	sStartMarker.visible = false;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let gunRef: any;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let x2Ref: any;
 
 	let initialized = false;
@@ -134,7 +121,6 @@ Title: M4A1 With Hands And Animations
 	const { scopeToggle, reload } = useKeyboardControls();
 
 	let x2 = false;
-	let silencer = false;
 	let gunDrawn = true;
 
 	// $: console.log({ x2, reloading, swappingScope, shooting, gunDrawn });
@@ -267,7 +253,7 @@ Title: M4A1 With Hands And Animations
 
 	const sightsRotationHelper = new THREE.Mesh();
 
-	useFrame(({ clock }) => {
+	useFrame(() => {
 		// x2material.needsUpdate = true;
 		bStartMesh.getWorldPosition(startPosition);
 		bEndMarker.getWorldPosition(endPosition);
@@ -291,7 +277,7 @@ Title: M4A1 With Hands And Animations
 		aimOffsetZ = Math.min(aimOffsetZ, 5);
 	});
 
-	const { activeCamera, sightsRenderTarget } = rendererStores;
+	const { activeCamera } = rendererStores;
 	const cameraSwapTween = tweened(0);
 
 	$: {
