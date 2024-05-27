@@ -1,14 +1,14 @@
 <script lang="ts">
-	import {cameraStores} from '$lib/renderer/cameraStores';
-	import {rendererStores} from '$lib/renderer/rendererStores';
-	import {useGameData} from '$lib/systems/_gameData';
-	import {useSystem} from '$lib/systems/_systems';
-	import type {Collider as RCollider, RigidBody as RRigidBody} from '@dimforge/rapier3d-compat';
-	import {T, useFrame} from '@threlte/core';
-	import {Collider, RigidBody, useRapier} from '@threlte/rapier';
-	import {useKeyboardControls} from 'svelte-kbc';
-	import {Quaternion, Vector3} from 'three';
-	import {playerStores} from './playerStores';
+	import { cameraStores } from '$lib/renderer/cameraStores';
+	import { rendererStores } from '$lib/renderer/rendererStores';
+	import { useGameData } from '$lib/systems/_gameData';
+	import { useSystem } from '$lib/systems/_systems';
+	import type { Collider as RCollider, RigidBody as RRigidBody } from '@dimforge/rapier3d-compat';
+	import { T, useFrame } from '@threlte/core';
+	import { Collider, RigidBody, useRapier } from '@threlte/rapier';
+	import { useKeyboardControls } from 'svelte-kbc';
+	import { Quaternion, Vector3 } from 'three';
+	import { playerStores } from './playerStores';
 
 	const { playerPosition } = playerStores;
 
