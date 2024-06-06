@@ -1,16 +1,27 @@
 {
-	"name": "my-project",
-	"version": "0.0.1",
+	"name": "threlte-fps",
+	"version": "1.0.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"dev": "vite dev",
 		"format": "prettier --plugin-search-dir . --write .",
-		"models": "node scripts/model-pipeline.js"
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"models": "node scripts/model-pipeline.js",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@sveltejs/adapter-static": "^2.0.3",
+		"@types/howler": "^2.2.7",
+		"howler": "^2.2.3",
+		"i": "^0.3.7",
+		"npm": "^9.8.1",
+		"simplex-noise": "^4.0.1",
+		"svelte-kbc": "^0.1.1",
+		"three-custom-shader-material": "^5.4.0"
 	},
 	"devDependencies": {
 		"@dimforge/rapier3d-compat": "^0.11.2",
@@ -40,16 +51,5 @@
 		"tslib": "^2.6.1",
 		"typescript": "^5.1.6",
 		"vite": "^4.4.9"
-	},
-	"type": "module",
-	"dependencies": {
-		"@sveltejs/adapter-static": "^2.0.3",
-		"@types/howler": "^2.2.7",
-		"howler": "^2.2.3",
-		"i": "^0.3.7",
-		"npm": "^9.8.1",
-		"simplex-noise": "^4.0.1",
-		"svelte-kbc": "^0.1.1",
-		"three-custom-shader-material": "^5.4.0"
 	}
 }
